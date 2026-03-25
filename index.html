@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JJUTECH – Where Aims Become Achievement</title>
+  <meta name="description" content="JJUTECH – A futuristic tech blog covering AI, Web, Security, and more." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <span class="loader-logo">JJUTECH</span>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">JJU<span>TECH</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal">🚀 The Future of Tech Journalism</div>
+      <h1 class="hero-title reveal">
+        Where Aims Become<br />
+        <span class="gradient-text typing-text" id="typingText"></span>
+      </h1>
+      <p class="hero-sub reveal">Cutting-edge insights on AI, Web Development, Cybersecurity, and the technologies shaping tomorrow.</p>
+      <div class="hero-cta reveal">
+        <a href="#blog" class="btn btn-primary">Read Latest Articles</a>
+        <a href="#categories" class="btn btn-ghost">Explore Topics</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Articles</span></div>
+        <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Readers</span></div>
+        <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Categories</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED POSTS ========== -->
+  <section class="featured" id="featured">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Featured</span>
+        <h2 class="section-title">Top Stories This Week</h2>
+      </div>
+      <div class="featured-grid">
+        <article class="featured-card featured-main reveal" data-category="ai">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="AI Revolution" loading="lazy" />
+            <span class="card-tag tag-ai">AI</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 12, 2025</span><span>8 min read</span></div>
+            <h3>The AI Revolution: How Large Language Models Are Rewriting the Rules of Software</h3>
+            <p>From GPT-4 to Gemini Ultra, the race to build the most capable AI is reshaping every industry. We dive deep into what this means for developers.</p>
+            <a href="post.html" class="btn btn-sm btn-primary">Read More</a>
+          </div>
+        </article>
+        <article class="featured-card reveal" data-category="web">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&q=80" alt="Web Dev" loading="lazy" />
+            <span class="card-tag tag-web">Web</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 10, 2025</span><span>5 min read</span></div>
+            <h3>CSS in 2025: The Features That Finally Made It</h3>
+            <p>Container queries, cascade layers, and the :has() selector — CSS has never been more powerful.</p>
+            <a href="post.html" class="btn btn-sm btn-ghost">Read More</a>
+          </div>
+        </article>
+        <article class="featured-card reveal" data-category="security">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80" alt="Security" loading="lazy" />
+            <span class="card-tag tag-security">Security</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 8, 2025</span><span>6 min read</span></div>
+            <h3>Zero-Trust Architecture: Why Every Startup Needs It Now</h3>
+            <p>Perimeter-based security is dead. Here's how zero-trust is becoming the new standard for modern infrastructure.</p>
+            <a href="post.html" class="btn btn-sm btn-ghost">Read More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORIES ========== -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Browse</span>
+        <h2 class="section-title">Explore Categories</h2>
+      </div>
+      <div class="category-filters reveal" id="categoryFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="devops">DevOps</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG GRID + SIDEBAR ========== -->
+  <section class="blog-section" id="blog">
+    <div class="container blog-layout">
+
+      <!-- Blog Grid -->
+      <main class="blog-grid" id="blogGrid">
+
+        <article class="blog-card reveal" data-category="ai">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&q=80" alt="AI Tools" loading="lazy" />
+            <span class="card-tag tag-ai">AI</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 15, 2025</span><span>4 min read</span></div>
+            <h3>10 AI Tools Every Developer Should Know in 2025</h3>
+            <p>From code completion to automated testing, these AI tools are changing how we build software.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="web">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=500&q=80" alt="React" loading="lazy" />
+            <span class="card-tag tag-web">Web</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 14, 2025</span><span>7 min read</span></div>
+            <h3>React vs Vue vs Svelte: The 2025 Showdown</h3>
+            <p>Which frontend framework should you bet your next project on? We break down the tradeoffs.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="cloud">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80" alt="Cloud" loading="lazy" />
+            <span class="card-tag tag-cloud">Cloud</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 13, 2025</span><span>5 min read</span></div>
+            <h3>Serverless in 2025: Hype or the Real Deal?</h3>
+            <p>We examine whether serverless architecture has lived up to its promises and where it falls short.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="mobile">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=80" alt="Mobile" loading="lazy" />
+            <span class="card-tag tag-mobile">Mobile</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 11, 2025</span><span>6 min read</span></div>
+            <h3>Flutter vs React Native: Which One Wins in 2025?</h3>
+            <p>Cross-platform mobile development has matured. Here's how the two giants stack up today.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="devops">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=500&q=80" alt="DevOps" loading="lazy" />
+            <span class="card-tag tag-devops">DevOps</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 9, 2025</span><span>5 min read</span></div>
+            <h3>Kubernetes vs Docker Swarm: Container Orchestration in 2025</h3>
+            <p>Choosing the right orchestration tool can make or break your deployment pipeline.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="security">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80" alt="Security" loading="lazy" />
+            <span class="card-tag tag-security">Security</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 7, 2025</span><span>8 min read</span></div>
+            <h3>The OWASP Top 10 in 2025: What's Changed?</h3>
+            <p>Web application security threats evolve fast. Here's what developers need to watch out for this year.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="ai">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&q=80" alt="Robotics" loading="lazy" />
+            <span class="card-tag tag-ai">AI</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 6, 2025</span><span>6 min read</span></div>
+            <h3>Autonomous Agents: The Next Frontier in AI Development</h3>
+            <p>AI agents that can plan, reason, and execute multi-step tasks are here. What does that mean for us?</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="web">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80" alt="WebAssembly" loading="lazy" />
+            <span class="card-tag tag-web">Web</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 5, 2025</span><span>7 min read</span></div>
+            <h3>WebAssembly Is Eating the Web — And That's a Good Thing</h3>
+            <p>WASM is no longer just for games. It's powering the next generation of web applications.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-category="cloud">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&q=80" alt="Edge Computing" loading="lazy" />
+            <span class="card-tag tag-cloud">Cloud</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span>Jun 4, 2025</span><span>5 min read</span></div>
+            <h3>Edge Computing: Bringing the Cloud Closer to You</h3>
+            <p>Latency is the enemy of great UX. Edge computing is the weapon developers are reaching for.</p>
+            <a href="post.html" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- No results message -->
+        <div class="no-results" id="noResults" style="display:none;">
+          <span>🔍</span>
+          <p>No posts found. Try a different search term.</p>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+
+        <div class="sidebar-widget glass reveal">
+          <h4 class="widget-title">Search</h4>
+          <div class="search-wrap">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search articles..." aria-label="Search articles" />
+            <span class="search-icon">🔍</span>
+          </div>
+        </div>
+
+        <div class="sidebar-widget glass reveal">
+          <h4 class="widget-title">Categories</h4>
+          <ul class="category-list">
+            <li><a href="#" data-filter="ai">🤖 Artificial Intelligence <span>24</span></a></li>
+            <li><a href="#" data-filter="web">🌐 Web Development <span>31</span></a></li>
+            <li><a href="#" data-filter="security">🔒 Cybersecurity <span>18</span></a></li>
+            <li><a href="#" data-filter="cloud">☁️ Cloud Computing <span>22</span></a></li>
+            <li><a href="#" data-filter="mobile">📱 Mobile Dev <span>15</span></a></li>
+            <li><a href="#" data-filter="devops">⚙️ DevOps <span>12</span></a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget glass reveal">
+          <h4 class="widget-title">Trending</h4>
+          <ol class="trending-list">
+            <li><a href="post.html">The AI Revolution: How LLMs Are Rewriting Software Rules</a></li>
+            <li><a href="post.html">Zero-Trust Architecture for Modern Startups</a></li>
+            <li><a href="post.html">CSS in 2025: Features That Finally Made It</a></li>
+            <li><a href="post.html">WebAssembly Is Eating the Web</a></li>
+            <li><a href="post.html">Kubernetes vs Docker Swarm in 2025</a></li>
+          </ol>
+        </div>
+
+        <div class="sidebar-widget glass reveal">
+          <h4 class="widget-title">Tags</h4>
+          <div class="tag-cloud">
+            <a href="#" class="tag-pill">JavaScript</a>
+            <a href="#" class="tag-pill">Python</a>
+            <a href="#" class="tag-pill">AI</a>
+            <a href="#" class="tag-pill">React</a>
+            <a href="#" class="tag-pill">Docker</a>
+            <a href="#" class="tag-pill">Linux</a>
+            <a href="#" class="tag-pill">API</a>
+            <a href="#" class="tag-pill">TypeScript</a>
+            <a href="#" class="tag-pill">Cloud</a>
+            <a href="#" class="tag-pill">Security</a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <!-- ========== NEWSLETTER ========== -->
+  <section class="newsletter" id="about">
+    <div class="container">
+      <div class="newsletter-inner glass reveal">
+        <div class="newsletter-text">
+          <span class="section-tag">Newsletter</span>
+          <h2>Stay Ahead in Tech</h2>
+          <p>Join 50,000+ developers getting weekly insights on AI, Web, and the future of technology. No spam, ever.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <div class="form-group">
+            <input type="email" placeholder="Enter your email address" required aria-label="Email address" />
+            <button type="submit" class="btn btn-primary">Subscribe →</button>
+          </div>
+          <p class="form-note">✓ Free forever &nbsp; ✓ Unsubscribe anytime &nbsp; ✓ No spam</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item glass">
+            <span class="contact-icon">📧</span>
+            <div><strong>Email</strong><p>hello@jjutech.com</p></div>
+          </div>
+          <div class="contact-item glass">
+            <span class="contact-icon">🐦</span>
+            <div><strong>Twitter</strong><p>@jjutech</p></div>
+          </div>
+          <div class="contact-item glass">
+            <span class="contact-icon">💼</span>
+            <div><strong>LinkedIn</strong><p>/company/jjutech</p></div>
+          </div>
+        </div>
+        <form class="contact-form glass reveal" id="contactForm">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Your message..." rows="5" required></textarea>
+          <button type="submit" class="btn btn-primary">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">JJU<span>TECH</span></a>
+          <p>Where aims become achievement. Your go-to source for cutting-edge tech insights.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter" class="social-link">𝕏</a>
+            <a href="#" aria-label="GitHub" class="social-link">⌥</a>
+            <a href="#" aria-label="LinkedIn" class="social-link">in</a>
+            <a href="#" aria-label="YouTube" class="social-link">▶</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Categories</h5>
+          <ul>
+            <li><a href="#">Artificial Intelligence</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Cybersecurity</a></li>
+            <li><a href="#">Cloud Computing</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Write for Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 JJUTECH. All rights reserved. Built with ❤️ for the tech community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
